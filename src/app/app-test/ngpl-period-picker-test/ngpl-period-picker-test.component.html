@@ -17,21 +17,26 @@
         [ngplDisableControl]="disableControl.value"
         [readOnlyControl]="readOnlyControl.value"
         [showLoading]="loadingControl.value"
-        formControlName="date" ngplWidth="250px" placeHolder="Default Date picker">
+        formControlName="date" ngplWidth="250px" placeHolder="Default Period picker">
 
       </ngpl-period-picker>
       <ngpl-period-picker
         [ngplDisableControl]="disableControl.value"
         [readOnlyControl]="readOnlyControl.value"
         [showLoading]="loadingControl.value"
-        exportMilliseconds="false"
-        formControlName="date1" ngplWidth="250px" placeHolder="Export as Date">
+        formControlName="date1"
+        ngplWidth="250px"
+        showLoadingWith="45%"
+        placeHolder="Loading With">
 
       </ngpl-period-picker>
       <ngpl-period-picker
         [showLoading]="loadingControl.value"
         [readOnlyControl]="readOnlyControl.value"
-        formControlName="date2" ngplWidth="250px" placeHolder="Formatted Value">
+        formControlName="date2"
+        ngplWidth="250px"
+        showLoadingHeight="20px"
+        placeHolder="Loading Height">
 
       </ngpl-period-picker>
 

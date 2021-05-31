@@ -72,6 +72,8 @@ export class NgplPeriodPickerComponent implements OnInit, OnChanges, OnDestroy, 
   @Input() customClass: '';
 
   @Input() showLoading = false;
+  @Input() showLoadingWith = '100%';
+  @Input() showLoadingHeight = '15px';
   @Changes('showLoading') showLoading$;
 
   _value: { anno: number, mes: number } | any;
