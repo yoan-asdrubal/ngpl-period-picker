@@ -72,8 +72,9 @@ export class NgplPeriodPickerComponent implements OnInit, OnChanges, OnDestroy, 
   @Input() customClass: '';
 
   @Input() showLoading = false;
+  @Changes('showLoading') showLoading$;
 
-  _value: { anno: number, mes: number };
+  _value: { anno: number, mes: number } | any;
 
   /** Maneja valor minimo a seleccionar por el periodo,
    *  puede ser un string ('2019#08'), objeto {anno:2019, mes:8} o una fecha
@@ -112,6 +113,7 @@ export class NgplPeriodPickerComponent implements OnInit, OnChanges, OnDestroy, 
         tap(val => this.procesarPeriodoMinimo(val))
       )
       .subscribe();
+
     this.max$
       .pipe(
         untilDestroyed(this),
