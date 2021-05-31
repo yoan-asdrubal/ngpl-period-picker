@@ -1,0 +1,22 @@
+<mat-form-field class="widget-period-picker-mat-form-field {{customClass}}"
+                color="accent" floatLabel="never"
+                [appearance]="appearance"
+
+>
+    <mat-label>{{ showLoading ? '' : placeHolder}}</mat-label>
+    <ngpl-skeleton width="75%" height="15px" [isLoading]="showLoading">
+        <input [min]="_min" [max]="_max" matInput [matDatepicker]="picker"
+               skipValidation
+               [ngplDisableControl]="disabledControl"
+               [readOnly]="readOnlyControl"
+
+               name="rangeDateCtrl" ngDefaultControl
+               [formControl]="rangeDateCtrl" (keydown)="$event.preventDefault()">
+    </ngpl-skeleton>
+    <mat-datepicker-toggle [disabled]="disabledControl || readOnlyControl" *ngIf="showLoading!==true" matSuffix
+                           [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker (opened)="open()" (closed)="close()" #picker startView="year"
+                    (monthSelected)="dateInput($event,  picker)"
+    ></mat-datepicker>
+
+</mat-form-field>

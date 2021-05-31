@@ -1,0 +1,72 @@
+<section>
+  <h1>NGPL PERIOD PICKER</h1>
+  <div>
+    <mat-checkbox [formControl]="disableControl" class="mr-3">
+      Disable
+    </mat-checkbox>
+    <mat-checkbox [formControl]="readOnlyControl" class="mr-3">
+      ReadOnly
+    </mat-checkbox>
+    <mat-checkbox [formControl]="loadingControl" class="mr-3">
+      Show Loading
+    </mat-checkbox>
+  </div>
+  <form [formGroup]="formGroup" fxLayout="column">
+    <div fxLayout fxLayoutAlign="space-around">
+      <ngpl-period-picker
+        [ngplDisableControl]="disableControl.value"
+        [readOnlyControl]="readOnlyControl.value"
+        [showLoading]="loadingControl.value"
+        formControlName="date" ngplWidth="250px" placeHolder="Default Date picker">
+
+      </ngpl-period-picker>
+      <ngpl-period-picker
+        [ngplDisableControl]="disableControl.value"
+        [readOnlyControl]="readOnlyControl.value"
+        [showLoading]="loadingControl.value"
+        exportMilliseconds="false"
+        formControlName="date1" ngplWidth="250px" placeHolder="Export as Date">
+
+      </ngpl-period-picker>
+      <ngpl-period-picker
+        [showLoading]="loadingControl.value"
+        [readOnlyControl]="readOnlyControl.value"
+        formControlName="date2" ngplWidth="250px" placeHolder="Formatted Value">
+
+      </ngpl-period-picker>
+
+    </div>
+    <div fxLayout fxLayoutAlign="space-around">
+      <ngpl-period-picker
+        [ngplDisableControl]="disableControl.value"
+        [readOnlyControl]="readOnlyControl.value"
+        [showLoading]="loadingControl.value"
+        formControlName="min" ngplWidth="250px" placeHolder="Min Value">
+
+      </ngpl-period-picker>
+      <ngpl-period-picker
+        [ngplDisableControl]="disableControl.value"
+        [readOnlyControl]="readOnlyControl.value"
+        [showLoading]="loadingControl.value"
+        formControlName="max" ngplWidth="250px" placeHolder="Max Value">
+
+      </ngpl-period-picker>
+      <ngpl-period-picker
+        [showLoading]="loadingControl.value"
+        [min]="formGroup.get('min').value"
+        [max]="formGroup.get('max').value"
+        [readOnlyControl]="readOnlyControl.value"
+        formControlName="value" ngplWidth="250px" placeHolder="Select Date">
+
+      </ngpl-period-picker>
+
+    </div>
+  </form>
+
+  <div fxLayout="" fxLayoutAlign="space-between">
+    <pre>{{formGroup.value | json}}</pre>
+    <pre>{{formGroup.getRawValue() | json}}</pre>
+  </div>
+
+
+</section>
