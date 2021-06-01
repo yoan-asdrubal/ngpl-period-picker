@@ -64,6 +64,7 @@ export class NgplPeriodPickerComponent implements OnInit, OnChanges, OnDestroy, 
    */
   @Input() placeHolder = 'Período';
 
+  @Input() floatLabel = '';
   /**
    * Define el atributo appearance del matFormField, permite los mismos valores
    */
