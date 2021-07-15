@@ -21,14 +21,14 @@ import {NGPL_FILTER_BASE, NgplFilterBase} from 'ngpl-filter';
 
 const MONTH_MODE_FORMATS = {
   parse: {
-    dateInput: 'MM/YYYY',
+    dateInput: 'MM/YYYY'
   },
   display: {
     dateInput: 'MMMM - YYYY',
     monthYearLabel: 'MMM YYYY',
     dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM YYYY',
-  },
+    monthYearA11yLabel: 'MMMM YYYY'
+  }
 };
 
 @UntilDestroy()
@@ -73,7 +73,7 @@ export class NgplPeriodPickerComponent implements OnInit, OnChanges, OnDestroy, 
   @Input() customClass: '';
 
   @Input() showLoading = false;
-  @Input() showLoadingWith = '100%';
+  @Input() showLoadingWidth = '100%';
   @Input() showLoadingHeight = '15px';
   @Changes('showLoading') showLoading$;
 
@@ -96,13 +96,9 @@ export class NgplPeriodPickerComponent implements OnInit, OnChanges, OnDestroy, 
   @Output() opened = new EventEmitter();
   @Output() closed = new EventEmitter();
 
-   disabledControl = false;
+  disabledControl = false;
 
   @Input() readOnlyControl = false;
-
-
-  @Input() disabled: boolean;
-
 
   valueChange = new EventEmitter<any>();
 
@@ -140,7 +136,8 @@ export class NgplPeriodPickerComponent implements OnInit, OnChanges, OnDestroy, 
       }
     } else {
       const date = new Date();
-      this._min = new Date(date.getFullYear() - 10, date.getMonth() + 1, 1);
+      this._min = null;
+      // this._min = new Date(date.getFullYear() - 10, date.getMonth() + 1, 1);
     }
 
   }
@@ -160,7 +157,8 @@ export class NgplPeriodPickerComponent implements OnInit, OnChanges, OnDestroy, 
       }
     } else {
       const date = new Date();
-      this._max = new Date(date.getFullYear() - 10, date.getMonth() + 1, 0);
+      this._max = null;
+      // this._max = new Date(date.getFullYear() - 10, date.getMonth() + 1, 0);
     }
 
   }

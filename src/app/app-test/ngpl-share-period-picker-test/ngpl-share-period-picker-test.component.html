@@ -1,0 +1,210 @@
+<section>
+  <h1>NGPL PERIOD PICKER</h1>
+  <div>
+    <mat-checkbox [formControl]="disableControl" class="mr-3">
+      Disable
+    </mat-checkbox>
+    <mat-checkbox [formControl]="readOnlyControl" class="mr-3">
+      ReadOnly
+    </mat-checkbox>
+    <mat-checkbox [formControl]="loadingControl" class="mr-3">
+      Show Loading
+    </mat-checkbox>
+  </div>
+  <h3>Default Share Period Picker</h3>
+  <div fxLayout fxLayoutAlign="space-around">
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      ngplWidth="250px" placeHolder="Default Period picker">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      ngplWidth="250px"
+      showLoadingWidth="45%"
+      placeHolder="Loading With">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [showLoading]="loadingControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      ngplWidth="250px"
+      showLoadingHeight="20px"
+      placeHolder="Loading Height">
+
+    </ngpl-share-period-picker>
+
+  </div>
+
+  <h3>Local Store Share Period Picker</h3>
+  <div fxLayout fxLayoutAlign="space-around">
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      ngplWidth="250px"
+      shareOn="localStore"
+      placeHolder="Min Value">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      shareOn="localStore"
+      ngplWidth="250px" placeHolder="Max Value">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [showLoading]="loadingControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      shareOn="localStore"
+      ngplWidth="250px" placeHolder="Select Date">
+
+    </ngpl-share-period-picker>
+
+  </div>
+
+
+  <h3>All Store Share Period Picker</h3>
+  <div fxLayout fxLayoutAlign="space-around">
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      ngplWidth="250px"
+      shareOn="all"
+      placeHolder="Min Value">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      shareOn="all"
+      ngplWidth="250px" placeHolder="Max Value">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [showLoading]="loadingControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      shareOn="all"
+      ngplWidth="250px" placeHolder="Select Date">
+
+    </ngpl-share-period-picker>
+
+  </div>
+
+<h1>CUSTOM STORE KEY PERIOD PICKER</h1>
+
+  <h3>Default Share Period Picker</h3>
+  <div fxLayout fxLayoutAlign="space-around">
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      [storeKey]="storeKey"
+      ngplWidth="250px" placeHolder="Default Period picker">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      ngplWidth="250px"
+      [storeKey]="storeKey"
+
+      showLoadingWidth="45%"
+      placeHolder="Loading With">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [showLoading]="loadingControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      ngplWidth="250px"
+      [storeKey]="storeKey"
+
+      showLoadingHeight="20px"
+      placeHolder="Loading Height">
+
+    </ngpl-share-period-picker>
+
+  </div>
+
+  <h3>Local Store Share Period Picker</h3>
+  <div fxLayout fxLayoutAlign="space-around">
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      ngplWidth="250px"
+      [storeKey]="storeKey"
+
+      shareOn="localStore"
+      placeHolder="Min Value">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      shareOn="localStore"
+      [storeKey]="storeKey"
+
+      ngplWidth="250px" placeHolder="Max Value">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [showLoading]="loadingControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      shareOn="localStore"
+      [storeKey]="storeKey"
+
+      ngplWidth="250px" placeHolder="Select Date">
+
+    </ngpl-share-period-picker>
+
+  </div>
+
+
+  <h3>All Store Share Period Picker</h3>
+  <div fxLayout fxLayoutAlign="space-around">
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      ngplWidth="250px"
+      shareOn="all"
+      [storeKey]="storeKey"
+
+      placeHolder="Min Value">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [ngplDisableControl]="disableControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      [showLoading]="loadingControl.value"
+      shareOn="all"
+      [storeKey]="storeKey"
+
+      ngplWidth="250px" placeHolder="Max Value">
+
+    </ngpl-share-period-picker>
+    <ngpl-share-period-picker
+      [showLoading]="loadingControl.value"
+      [readOnlyControl]="readOnlyControl.value"
+      shareOn="all"
+      [storeKey]="storeKey"
+
+      ngplWidth="250px" placeHolder="Select Date">
+
+    </ngpl-share-period-picker>
+
+  </div>
+
+
+</section>

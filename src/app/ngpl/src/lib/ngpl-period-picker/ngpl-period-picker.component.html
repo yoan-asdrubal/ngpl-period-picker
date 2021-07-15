@@ -3,7 +3,7 @@
                 [appearance]="appearance"
 >
   <mat-label>{{placeHolder}}</mat-label>
-  <ngpl-skeleton [width]="showLoadingWith" [height]="showLoadingHeight" [isLoading]="showLoading">
+  <ngpl-skeleton [width]="showLoadingWidth" [height]="showLoadingHeight" [isLoading]="showLoading">
     <input [min]="_min" [max]="_max" matInput [matDatepicker]="picker"
            skipValidation
            [ngplDisableControl]="disabledControl"
