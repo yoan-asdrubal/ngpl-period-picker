@@ -1,16 +1,17 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
     <mat-toolbar>NGPL PERIOD PICKER</mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list>
-<!--      <mat-list-item  >-->
-<!--        <mat-icon mat-list-icon>note</mat-icon>-->
-<!--        <div >Pipe</div>-->
-<!--      </mat-list-item>-->
+      <!--      <mat-list-item  >-->
+      <!--        <mat-icon mat-list-icon>note</mat-icon>-->
+      <!--        <div >Pipe</div>-->
+      <!--      </mat-list-item>-->
       <a mat-list-item routerLink="/ngpl-period-picker">Ngpl Period Picker</a>
+      <a mat-list-item routerLink="/ngpl-share-period-picker">Ngpl Share Period Picker</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -28,6 +28,7 @@ import {NgplPeriodPickerTestComponent} from './app-test/ngpl-period-picker-test/
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgplCommonModule} from 'ngpl-common';
 import {NgplPeriodPickerModule} from './ngpl/src/lib';
+import {NgplSharePeriodPickerTestComponent} from './app-test/ngpl-share-period-picker-test/ngpl-share-period-picker-test.component';
 // import 'ngpl-common/lib/ngpl-interfaces/string.interface';
 // import 'ngpl-common/lib/ngpl-interfaces/object.interface';
 
@@ -57,7 +58,8 @@ const materialModules = [
   declarations: [
     AppComponent,
     SideNavComponent,
-    NgplPeriodPickerTestComponent
+    NgplPeriodPickerTestComponent,
+    NgplSharePeriodPickerTestComponent
   ],
   imports: [
     BrowserModule,
