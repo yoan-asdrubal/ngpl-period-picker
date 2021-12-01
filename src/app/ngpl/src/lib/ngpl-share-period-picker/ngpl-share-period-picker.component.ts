@@ -20,7 +20,7 @@ export class NgplSharePeriodPickerComponent implements OnInit {
   periodoCtrl = new FormControl();
   @Input() customClass = '';
   @Input() appearance: 'legacy' | 'standard' | 'fill' | 'outline' | 'default' = 'outline';
-  @Input() placeholder = 'Periodo';
+  @Input() placeHolder = 'Periodo';
   @Input() shareOn: 'cookie' | 'localStore' | 'all' = 'cookie';
 
   @Input() floatLabel = '';
@@ -32,7 +32,7 @@ export class NgplSharePeriodPickerComponent implements OnInit {
   @Input() showLoadingHeight = '15px';
   @Input() min: any;
   @Input() max: any;
-
+  @Input() value = null;
   @Input() readOnlyControl = false;
   @Input() disabledControl = false;
 
@@ -42,10 +42,10 @@ export class NgplSharePeriodPickerComponent implements OnInit {
   // tslint:disable-next-line:typedef
   ngOnInit() {
     if (this.shareOn === 'cookie' || this.shareOn === 'all') {
-      this.periodoCtrl.setValue(this.cookieService.getValue(this.storeKey));
+      this.periodoCtrl.setValue(this.cookieService.get(this.storeKey, this.value));
     }
     if (this.shareOn === 'localStore' || this.shareOn === 'all') {
-      this.periodoCtrl.setValue(this.localStoreService.getItem(this.storeKey));
+      this.periodoCtrl.setValue(this.localStoreService.getItem(this.storeKey, this.value));
     }
 
     this.periodoCtrl.valueChanges
@@ -55,7 +55,7 @@ export class NgplSharePeriodPickerComponent implements OnInit {
         tap(val => {
           const value = {...val, id: this.id};
           if (this.shareOn === 'cookie' || this.shareOn === 'all') {
-            this.cookieService.setValue(this.storeKey, value);
+            this.cookieService.set(this.storeKey, value);
           }
           if (this.shareOn === 'localStore' || this.shareOn === 'all') {
             this.localStoreService.setItem(this.storeKey, value);
@@ -75,7 +75,6 @@ export class NgplSharePeriodPickerComponent implements OnInit {
           tap((value) => {
             this.propagation = true;
             this.periodoCtrl.setValue(value);
-            this.propagation = false;
           })
         )
         .subscribe();
@@ -90,7 +89,6 @@ export class NgplSharePeriodPickerComponent implements OnInit {
           tap((value) => {
             this.propagation = true;
             this.periodoCtrl.setValue(value);
-            this.propagation = false;
           })
         )
         .subscribe();

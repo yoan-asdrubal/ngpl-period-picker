@@ -1,10 +1,9 @@
 {
   "name": "ngpl-period-picker",
-  "version": "1.1.2",
-  "peerDependencies": {
-    "ngpl-common": "1.0.17"
-  },
+  "version": "1.1.8",
+  "peerDependencies": {},
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "ngpl-common": "^2.0.33"
   }
 }
